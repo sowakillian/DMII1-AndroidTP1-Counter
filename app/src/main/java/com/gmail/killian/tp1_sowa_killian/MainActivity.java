@@ -8,11 +8,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button buttonToast;
-    Button buttonCount;
-    TextView counterTextView;
+    private TextView textViewCount;
     int counter = 0;
 
     @Override
@@ -20,30 +18,35 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        counterTextView =  findViewById(R.id.counterTextView);
-
-        initToastButton();
-        initCountButton();
+        initViews();
     }
 
+    /**
+     * Methods that allow to retrieve the instance of views
+     *  in the layout and set onClick listeners on buttons
+     */
+    private void initViews() {
+        Button buttonToast = findViewById(R.id.buttonToast);
+        Button buttonInc = findViewById(R.id.buttonCount);
+        textViewCount =  findViewById(R.id.counterTextView);
 
-    void initToastButton() {
-        buttonToast = findViewById(R.id.buttonToast);
-        buttonToast.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+        buttonToast.setOnClickListener(this);
+        buttonInc.setOnClickListener(this);
+    }
+
+    /**
+     * Method that implement actions when a button is clicked
+     */
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.buttonToast:
                 Toast.makeText(MainActivity.this, String.valueOf(counter), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-    }
-
-    void initCountButton() {
-        buttonCount = findViewById(R.id.buttonCount);
-        buttonCount.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+                break;
+            case R.id.buttonCount:
                 counter++;
-                counterTextView.setText(String.valueOf(counter));
-            }
-        });
+                textViewCount.setText(String.valueOf(counter));
+                break;
+        }
     }
 }

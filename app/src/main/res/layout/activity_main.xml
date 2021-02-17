@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:textColor="@color/colorYellow"
             android:textSize="150sp"
-            android:text="0"
+            android:text="@string/_0"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
