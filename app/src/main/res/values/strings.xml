@@ -7,4 +7,5 @@
     <string name="send_an_email">Envoyer un email</string>
     <string name="counter_and_toast">Compteur et toast</string>
     <string name="do_a_calc">Faire un calcul</string>
+    <string name="basic_image">basic image</string>
 </resources>

@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.gmail.killian.tp1_sowa_killian.databinding.ActivityViewBindingBinding;
 
 public class ViewBindingActivity extends AppCompatActivity implements View.OnClickListener {
@@ -29,6 +30,7 @@ public class ViewBindingActivity extends AppCompatActivity implements View.OnCli
      */
     private void initViews() {
         binding.buttonResult.setOnClickListener(this);
+        putImageInImageView();
     }
 
     /**
@@ -51,5 +53,9 @@ public class ViewBindingActivity extends AppCompatActivity implements View.OnCli
             }
 
         }
+    }
+
+    private void putImageInImageView() {
+        Glide.with(this).load("https://lemagdesanimaux.ouest-france.fr/images/dossiers/2020-04/lapin-nain-074045.jpg").into(binding.imageViewBasic);
     }
 }
