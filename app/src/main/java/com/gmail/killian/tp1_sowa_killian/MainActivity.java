@@ -4,19 +4,23 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.gmail.killian.tp1_sowa_killian.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView textViewCount;
     int counter = 0;
+    int sum1 = 0;
+    int sum2 = 0;
+    ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         initViews();
     }
@@ -26,12 +30,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      *  in the layout and set onClick listeners on buttons
      */
     private void initViews() {
-        Button buttonToast = findViewById(R.id.buttonToast);
-        Button buttonInc = findViewById(R.id.buttonCount);
-        textViewCount =  findViewById(R.id.counterTextView);
-
-        buttonToast.setOnClickListener(this);
-        buttonInc.setOnClickListener(this);
+        binding.buttonToast.setOnClickListener(this);
+        binding.buttonCount.setOnClickListener(this);
+        binding.buttonResult.setOnClickListener(this);
     }
 
     /**
@@ -45,8 +46,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.buttonCount:
                 counter++;
-                textViewCount.setText(String.valueOf(counter));
+                binding.counterTextView.setText(String.valueOf(counter));
                 break;
+            case R.id.buttonResult:
+                sum1 = Integer.parseInt(binding.sumNumber1.getText().toString());
+                sum1 = Integer.parseInt(binding.sumNumber2.getText().toString());
+
+                int result = sum1+sum2;
+                binding.resultSumTextView.setText(String.valueOf(result));
         }
     }
 }
