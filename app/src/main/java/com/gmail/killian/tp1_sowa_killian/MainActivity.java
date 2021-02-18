@@ -11,8 +11,8 @@ import com.gmail.killian.tp1_sowa_killian.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     int counter = 0;
-    int sum1 = 0;
-    int sum2 = 0;
+    float sum1 = 0;
+    float sum2 = 0;
     ActivityMainBinding binding;
 
     @Override
@@ -49,10 +49,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 binding.counterTextView.setText(String.valueOf(counter));
                 break;
             case R.id.buttonResult:
-                sum1 = Integer.parseInt(binding.sumNumber1.getText().toString());
-                sum1 = Integer.parseInt(binding.sumNumber2.getText().toString());
+                sum1 = Float.parseFloat(binding.sumNumber1.getText().toString());
+                sum2 = Float.parseFloat(binding.sumNumber2.getText().toString());
 
-                int result = sum1+sum2;
+                float result = sum1+sum2;
                 binding.resultSumTextView.setText(String.valueOf(result));
         }
     }
