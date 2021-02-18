@@ -10,8 +10,6 @@ import com.gmail.killian.tp1_sowa_killian.databinding.ActivityToastCountBinding;
 
 public class ToastCountActivity extends AppCompatActivity implements View.OnClickListener {
     int counter = 0;
-    float sum1 = 0;
-    float sum2 = 0;
     ActivityToastCountBinding binding;
 
     @Override
@@ -31,7 +29,6 @@ public class ToastCountActivity extends AppCompatActivity implements View.OnClic
     private void initViews() {
         binding.buttonToast.setOnClickListener(this);
         binding.buttonCount.setOnClickListener(this);
-        binding.buttonResult.setOnClickListener(this);
     }
 
     /**
@@ -47,12 +44,6 @@ public class ToastCountActivity extends AppCompatActivity implements View.OnClic
                 counter++;
                 binding.counterTextView.setText(String.valueOf(counter));
                 break;
-            case R.id.buttonResult:
-                sum1 = Float.parseFloat(binding.sumNumber1.getText().toString());
-                sum2 = Float.parseFloat(binding.sumNumber2.getText().toString());
-
-                float result = sum1+sum2;
-                binding.resultSumTextView.setText(String.valueOf(result));
         }
     }
 }

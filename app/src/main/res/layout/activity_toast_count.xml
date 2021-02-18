@@ -22,67 +22,6 @@
         android:background="@color/colorPrimaryDark"
         >
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/constraintLayoutFields"
-            app:layout_constraintTop_toTopOf="parent"
-            android:background="@color/colorPrimary"
-            >
-
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/sumNumber1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_percent="0.5"
-                android:background="@color/colorPrimaryLight"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimaryDark"
-                android:text="@string/_0"
-                android:inputType="numberDecimal"
-                android:textSize="40sp"
-                android:autofillHints="@string/_0" />
-
-            <EditText
-                android:id="@+id/sumNumber2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:textAlignment="center"
-                android:layout_width="0dp"
-                android:inputType="numberDecimal"
-                android:textSize="40sp"
-                android:text="@string/_0"
-                android:layout_height="wrap_content"
-                app:layout_constraintWidth_percent="0.5"
-                android:background="@color/colorPrimaryLight"
-                />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <Button
-            android:id="@+id/buttonResult"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/constraintLayoutFields"
-            android:background="@color/colorYellow"
-            android:text="@string/equal">
-        </Button>
-
-        <TextView
-            android:id="@+id/resultSumTextView"
-            app:layout_constraintTop_toBottomOf="@id/buttonResult"
-            android:textAlignment="center"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:textColor="@color/colorYellow"
-            android:textSize="50sp"
-            android:text="@string/_0"
-            />
-
-
-
         <TextView
             android:id="@+id/counterTextView"
             app:layout_constraintTop_toTopOf="parent"
