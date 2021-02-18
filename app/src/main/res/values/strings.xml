@@ -4,4 +4,7 @@
     <string name="count">COUNT</string>
     <string name="_0">0</string>
     <string name="equal">=</string>
+    <string name="send_an_email">Envoyer un email</string>
+    <string name="counter_and_toast">Compteur et toast</string>
+    <string name="do_a_calc">Faire un calcul</string>
 </resources>
