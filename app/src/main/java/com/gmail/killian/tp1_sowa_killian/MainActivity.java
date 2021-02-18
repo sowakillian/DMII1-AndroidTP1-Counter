@@ -49,8 +49,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 binding.counterTextView.setText(String.valueOf(counter));
                 break;
             case R.id.buttonResult:
-                sum1 = Float.parseFloat(binding.sumNumber1.getText().toString());
-                sum2 = Float.parseFloat(binding.sumNumber2.getText().toString());
+                if (binding.sumNumber1.getText().toString().equals("")) {
+                    sum1 = 0;
+                } else {
+                    sum1 = Float.parseFloat(binding.sumNumber1.getText().toString());
+                }
+
+                if (binding.sumNumber1.getText().toString().equals("")) {
+                    sum2 = 0;
+                } else {
+                    sum2 = Float.parseFloat(binding.sumNumber2.getText().toString());
+                }
 
                 float result = sum1+sum2;
                 binding.resultSumTextView.setText(String.valueOf(result));
