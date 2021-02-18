@@ -2,6 +2,7 @@ package com.gmail.killian.tp1_sowa_killian;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -36,11 +37,19 @@ public class ViewBindingActivity extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.buttonResult) {
-            sum1 = Float.parseFloat(binding.sumNumber1.getText().toString());
-            sum2 = Float.parseFloat(binding.sumNumber2.getText().toString());
+            String sumNumber1 =  binding.sumNumber1.getText().toString();
+            String sumNumber2 =  binding.sumNumber2.getText().toString();
 
-            float result = sum1 + sum2;
-            binding.resultSumTextView.setText(String.valueOf(result));
+            if (sumNumber1.equals("") || sumNumber2.equals("")) {
+                Toast.makeText(ViewBindingActivity.this, "Merci d'entrer un chiffre dans les deux champs", Toast.LENGTH_SHORT).show();
+            } else {
+                sum1 = Float.parseFloat(sumNumber1);
+                sum2 = Float.parseFloat(sumNumber2);
+
+                float result = sum1 + sum2;
+                binding.resultSumTextView.setText(String.valueOf(result));
+            }
+
         }
     }
 }
